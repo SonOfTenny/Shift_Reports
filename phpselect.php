@@ -14,12 +14,12 @@
 <div class="container">
 	<div class="jumbotron">
 		<h1>Shift Reports</h1>
-		<p>Production data</p>
 		<p>View, Add, Edit and Delete Records</p>
 	</div>
 <!-- View User table -->
 <div class="container">
 	<div>
+		<h2>View all Users</h2>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -48,7 +48,11 @@
 					echo '<tr><td>'.$row['ID'].'</td>
 								<td>'.$row['username'].'</td>
 								<td>'.$row['firstName'].
-								'</td><td>'.$row['lastName'].'</td></tr>';
+								'</td><td>'.$row['lastName'].'</td>'.
+								'<td><button type="button" class="btn btn-info btn-sm"
+								data-toggle="modal" data-target="#editModal">Edit</button></td>'.
+								'<td><button type="button" class="btn btn-warning btn-sm"
+								data-toggle="modal" data-target="#deleteModal">Delete</button></td>'.'</tr>';
 				}
 
 				// free statement and connection resources

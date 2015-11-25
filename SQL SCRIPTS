@@ -1,0 +1,77 @@
+select * from Tproduction_data INNER JOIN Tuser
+on Tproduction_data.userID = Tuser.id
+
+select Tuser.firstName, Tuser.lastName, Tproduction_data.* FROM Tuser
+INNER JOIN Tproduction_data
+ON Tproduction_data.userID = Tuser.id
+
+/* basic select all production data */
+select Tuser.firstName, Tuser.lastName, Tproduction_data.prod_hours, Tproduction_data.actual_mix,
+Tproduction_data.crumb_waste, Tproduction_data.cmp_waste, Tproduction_data.manning, Tproduction_data.date FROM Tuser
+INNER JOIN Tproduction_data
+ON Tproduction_data.userID = Tuser.id
+
+/* select all relevant records from production data  */
+select Tuser.firstName, Tuser.lastName, Tplant.name as 'Plant', 
+Tplant.mrph, Tshift.type as 'Shift Type', Tproduction_data.prod_hours, 
+Tproduction_data.actual_mix,
+Tproduction_data.crumb_waste, Tproduction_data.cmp_waste, 
+Tproduction_data.manning, Tproduction_data.date FROM Tuser
+INNER JOIN Tproduction_data
+ON Tproduction_data.userID = Tuser.id
+inner join Tplant
+on Tproduction_data.plantID = Tplant.id
+inner join Tshift
+on Tproduction_data.shiftID = Tshift.id
+
+/* select all relevant records from downtime table */
+select Tuser.firstName, Tuser.lastName, Tplant.name as 'Plant',  Tshift.type as 'Shift Type',
+Tdowntime.down_hours, Tdowntime.reason, Tdowntime.action, Tdowntime.date from Tuser
+inner join Tdowntime
+on Tdowntime.userID = tuser.ID
+inner join Tplant
+on Tdowntime.plantID = Tplant.id
+inner join Tshift
+on Tdowntime.shiftID = Tshift.ID
+
+/* select all from plant table */
+select * from Tplant 
+
+/* I want to change plant mrph */
+update Tplant
+set mrph = ?, target_mix = ?
+where name = ?
+
+/* I want to change the user table */
+/* select all users */
+select * from Tuser
+
+/* update user details */
+update Tuser
+set username = ?, password = ?, firstName = ?, lastName = ?
+where username = ? 
+or ID = ?
+
+/* create new user */
+insert into Tuser(username,password,firstName,lastName)
+values(?,?,?,?)
+
+/* remove a user */
+delete from tuser
+where username = ?
+
+
+/* backup the database */
+USE Shift_Reports
+
+GO
+backup database Shift_Reports
+TO DISK = 'C:\SQLSRV_BACKUPS\Shift_Reports.Bak'
+
+	WITH FORMAT,
+	MEDIANAME= 'Shift_Reports_SQLSRV backup',
+	NAME = 'Full backup of shift reports';
+Go
+
+
+

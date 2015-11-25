@@ -126,7 +126,7 @@ if (isset($_POST['submit'])) {
 	//}
 	// save to the database
 	sqlsrv_query("INSERT INTO dbo.Tuser(username,password,firstName,LastName)
-					VALUES($username,$password,$firstName,$lastName)");
+					VALUES($username,$password,$firstName,$lastName)")
 	or die(print_r(sqlsrv_errors(),true));
 
 }

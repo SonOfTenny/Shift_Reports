@@ -55,6 +55,9 @@
 					while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 					?>
 						<td><?php echo $row['id'];?></td>
+					<?php
+				}
+				?>
 			</tbody>
 	</div>
 </div>
@@ -124,7 +127,7 @@
 			</tbody>		
 		</table>
 	</div>
-
 </div>
+
 </body>
 </html>

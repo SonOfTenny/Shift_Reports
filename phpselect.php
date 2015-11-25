@@ -19,12 +19,14 @@
 	</div>
 <!-- View User table -->
 <div class="container">
-	<div class="row">
+	<div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<td>ID</td>
 					<td>Username</td>
+					<td>First Name</td>
+					<td>Last Name</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -44,7 +46,9 @@
 				// and display the results
 				while ($row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
 					echo '<tr><td>'.$row['ID'].'</td>
-								<td>'.$row['username'].'</td></tr>';
+								<td>'.$row['username'].'</td>
+								<td>'.$row['firstName'].
+								'</td><td>'.$row['lastName'].'</td></tr>';
 				}
 
 				// free statement and connection resources

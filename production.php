@@ -60,7 +60,7 @@
 							ON Tproduction_data.plantID = Tplant.id
 							INNER JOIN Tshift
 							ON Tproduction_data.shiftID = Tshift.id
-							LIMIT 5";
+							";
 					$stmt = sqlsrv_query($conn,$sql);
 					{
 						if($stmt===false){

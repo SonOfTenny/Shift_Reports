@@ -18,7 +18,46 @@
 		<p>View, Add, Edit and Delete Records</p>
 	</div>
 </div>
-
+<!-- View Simple Production table-->
+<div class="container">
+	<div>
+		<h3>View Production table</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>User ID</td>
+					<td>Plant ID</td>
+					<td>Shift ID</td>
+					<td>Production Hours</td>
+					<td>Actual Mix</td>
+					<td>Crumb Waste</td>
+					<td>Compactor Waste</td>
+					<td>Manning</td>
+					<td>Date</td>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					$serverName = "(local)";
+					$connectionInfo = array('Database' =>'Shift_Reports' ,'UID'=>'Mark','PWD'=>'Password1');
+					$conn = sqlsrv_connect($serverName,$connectionInfo);
+					if ($conn===false) {
+						die(print_r(sqlsrv_errors(),true));
+					}
+					$sql = "select * from dbo.Tproduction_data";
+					$stmt = sqlsrv_query($conn,$sql);
+					{
+						if($stmt===false){
+							die(print_r(sqlsrv_errors(),true));
+						}
+					}
+					while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+					?>
+						<td><?php echo $row['id'];?></td>
+			</tbody>
+	</div>
+</div>
 <!-- View Production data -->
 <div class="container">
 	<div>

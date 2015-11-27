@@ -38,7 +38,8 @@
 		// connect to Shift_Reports
 		include('connectdb.php');
 
-		$sql = "insert into dbo.Tproduction_data values(
+		$sql = "insert into dbo.Tproduction_data(userID,plantID,shiftID,prod_hours,
+				actual_mix, crumb_waste, cmp_waste, manning,date) values(
 				'".$userid."','".$plantid."','".$shiftid."',
 				'".$prodhours."','".$actualmix."','".$crumbwaste."',
 				'".$cmpwaste."','".$manning."','".$date."')";

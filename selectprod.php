@@ -42,7 +42,7 @@
 								<td>'.$row['cmp_waste'].'</td>
 								<td>'.$row['manning'].'</td>
 								<td>'.$row['date'].'</td></tr>';
-
+				}
 				// free statement and connection resources
 				sqlsrv_free_stmt($stmt);
 				sqlsrv_close($conn);

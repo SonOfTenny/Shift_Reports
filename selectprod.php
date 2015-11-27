@@ -27,7 +27,7 @@
 					die(print_r(sqlsrv_errors(),true));
 				}
 				// setup and execute the query
-				$sql = "SELECT * FROM Tproduction_data";
+				$sql = "SELECT * FROM dbo.Tproduction_data";
 				$stmt = sqlsrv_query($conn,$sql);
 				// retrieve each row as an associative array
 				// and display the results

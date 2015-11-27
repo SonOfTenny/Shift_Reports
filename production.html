@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Shift Reports - New Production Entry</title>
+</head>
+
+<body>
+	<h1>Shift Reports - New Production Entry</h1>
+
+	<form action="insert_prod.php" method="post">
+		<table border="0">
+			<tr>
+				<td>ID</td>
+					<td>User ID</td>
+						<td><input type="text" name="userid" maxlength="2" size='13'></td>
+					<td>Plant ID</td>
+					<td><input type="text" name="plantid" maxlength="9" size='13'></td>
+					<td>Shift ID</td>
+					<td><input type="text" name="shiftid" maxlength="1" size='13'></td>
+					<td>Production Hours</td>
+					<td><input type="text" name="prodhours" maxlength="2" size='13'></td>
+					<td>Actual Mix</td>
+					<td><input type="text" name="actualmix" maxlength="4" size='13'></td>
+					<td>Crumb Waste</td>
+					<td><input type="text" name="crumbwaste" maxlength="4" size='13'></td>
+					<td>Compactor Waste</td>
+					<td><input type="text" name="cmpwaste" maxlength="4" size='13'></td>
+					<td>Manning</td>
+					<td><input type="text" name="manning" maxlength="4" size='13'></td>
+					<td>Date</td>
+					<td><input type="text" name="date" maxlength="10" size='13'></td>
+			</tr>
+			<tr>
+				<tr colspan="2"><input type="submit" value="Save"></tr>
+			</tr>
+		</table>
+
+	</form>
+</body>

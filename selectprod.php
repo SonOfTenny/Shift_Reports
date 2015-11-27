@@ -1,25 +1,6 @@
 <html>
 <head></head>
 <body>
-<?php
-$connInfo = array('UID' =>'mark' ,'PWD'=>'Password1','Database'=>'Shift_Reports',);
-$serverName = '(local)';
-$conn = sqlsrv_connect($serverName,$connInfo);
-if(conn === false){
-	echo 'Could not connect.\n';
-	die(print_r(sqlsrv_errors(),true));
-}
-// set up query
-$sql = 'select * dbo.Tproduction_data';
-// execute query
-$stmt = sqlsrv_query($conn,$sql);
-if ($stmt === false) {
-	echo "Error in query prepartion/execution";
-	die(print_r(sqlsrv_errors(),true));
-}
-
-?>
-
 <table>
 <thead>
 				<tr>

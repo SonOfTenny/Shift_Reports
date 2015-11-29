@@ -40,8 +40,8 @@
 								$row['actual_mix'].'</td><td>'.
 								$row['crumb_waste'].'</td><td>'.
 								$row['cmp_waste'].'</td><td>'.
-								$row['manning'].'</td><td>'.
-								$row['pDate']
+								$row['manning']//.'</td><td>'//.
+								//$row['pDate']
 								.'</td></tr>'
 								;
 				}

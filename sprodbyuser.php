@@ -7,6 +7,13 @@
 					<td>First Name</td>
 					<td>Last Name</td>
 					<td>Plant</td>
+					<td>MRPH</td>
+					<td>Shift</td>
+					<td>Hours</td>
+					<td>Actual Waste</td>
+					<td>Crumb Waste</td>
+					<td>Comp. Waste</td>
+					<td>Manning</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -37,7 +44,15 @@
 				while ($row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
 					echo '<tr><td>'.$row['firstName'].'</td>
 								<td>'.$row['lastName'].
-								'</td><td>'.$row['plant'].'</td></tr>';
+								'</td><td>'.$row['plant'].
+								'</td><td>'.$row['mrph'].
+								'</td><td>'.$row['sType'].
+								'</td><td>'.$row['prod_hours'].
+								'</td><td>'.$row['actual'].
+								'</td><td>'.$row['crumb'].
+								'</td><td>'.$row['cmp'].
+								'</td><td>'.$row['manning'].
+								'</td></tr>';
 				}
 				// free statement and connection resources
 				sqlsrv_free_stmt($stmt);

@@ -41,7 +41,7 @@
 								$row['crumb_waste'].'</td><td>'.
 								$row['cmp_waste'].'</td><td>'.
 								$row['manning'].'</td><td>'.
-								$row['date']
+								$row['pDate']
 								.'</td></tr>'
 								;
 				}

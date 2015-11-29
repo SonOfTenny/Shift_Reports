@@ -1,19 +1,15 @@
 <html>
 <body>
-	<h1>All production details by User</h1>
 <table >
 			<thead>
 				<tr>
 					<td>First Name</td>
 					<td>Last Name</td>
 					<td>Plant</td>
-					<td>MRPH</td>
 					<td>Shift</td>
 					<td>Hours</td>
-					<td>Actual Waste</td>
-					<td>Crumb Waste</td>
-					<td>Comp. Waste</td>
-					<td>Manning</td>
+					<td>Reason</td>
+					<td>Action</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,17 +23,16 @@
 					die(print_r(sqlsrv_errors(),true));
 				}
 				// setup and execute the query
-				$sql = "select Tuser.firstName as 'firstName', Tuser.lastName as 'lastName', Tplant.name as 'plant', 
-						Tplant.mrph as 'mrph', Tshift.type as 'sType', Tproddata.prod_hours as 'prod_hours', 
-						Tproddata.actual_mix as 'actual',
-						Tproddata.crumb_waste as 'crumb', Tproddata.cmp_waste as 'cmp', 
-						Tproddata.manning as 'manning' FROM Tuser
-						INNER JOIN Tproddata
-						ON Tproddata.userID = Tuser.id
+				$sql = "select Tuser.firstName as 'firstName', Tuser.lastName as 'lastName', Tplant.name as 'plant',
+					  Tshift.type as 'sType',
+						Tdowntdata.down_hours as 'down_hours', Tdowntdata.reason as 'reason', Tdowntdata.action as 'action', 
+						Tdowntdata.dDate from Tuser
+						inner join Tdowntdata
+						on Tdowntdata.userID = tuser.ID
 						inner join Tplant
-						on Tproddata.plantID = Tplant.id
+						on Tdowntdata.plantID = Tplant.id
 						inner join Tshift
-						on Tproddata.shiftID = Tshift.id";
+						on Tdowntdata.shiftID = Tshift.ID";
 				$stmt = sqlsrv_query($conn,$sql);
 				// retrieve each row as an associative array
 				// and display the results
@@ -47,11 +42,9 @@
 								'</td><td>'.$row['plant'].
 								'</td><td>'.$row['mrph'].
 								'</td><td>'.$row['sType'].
-								'</td><td>'.$row['prod_hours'].
-								'</td><td>'.$row['actual'].
-								'</td><td>'.$row['crumb'].
-								'</td><td>'.$row['cmp'].
-								'</td><td>'.$row['manning'].
+								'</td><td>'.$row['down_hours'].
+								'</td><td>'.$row['reason'].
+								'</td><td>'.$row['action'].
 								'</td></tr>';
 				}
 				// free statement and connection resources
@@ -59,7 +52,9 @@
 				sqlsrv_close($conn);
 
 				?>
+
+
 			</tbody>
-		</table>
+
 
 </body>

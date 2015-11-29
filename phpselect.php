@@ -109,6 +109,7 @@
 
 <!-- PHP Magic down here -->
 <?php
+// DO NOT USE FOR UPDATE - INSERTS ONLY
 // connect to Shift_Reports
 include('connectdb.php');
 // Check to see if form was submitted, start to process the

@@ -32,8 +32,13 @@
 				while ($row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
 					echo '<tr><td>'.$row['ID'].'</td>
 								<td>'.$row['userID'].'</td>
-								<td>'.$row['plantID'].
-								'</td><td>'.$row['dtypeID'].'</td></tr>';
+								<td>'.$row['plantID'].'</td><td>'.
+								$row['dtypeID'].'</td><td>'.
+								$row['shiftID'].'</td><td>'.
+								$row['down_hours'].'</td><td>'.
+								$row['reason'].'</td><td>'.
+								$row['action'].
+								'</td></tr>';
 								
 				}
 				// free statement and connection resources

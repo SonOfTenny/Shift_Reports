@@ -1,5 +1,6 @@
 <html>
 <body>
+	<h1>All Downtime Records by User</h1>
 <table >
 			<thead>
 				<tr>

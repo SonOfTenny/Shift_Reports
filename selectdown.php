@@ -1,5 +1,6 @@
 <html>
 <body>
+	<h1>All Downtime Records</h1>
 <table >
 			<thead>
 				<tr>
@@ -11,7 +12,6 @@
 					<td>Down Hours</td>
 					<td>Reason</td>
 					<td>Action</td>
-					<td>Date</td>
 				</tr>
 			</thead>
 			<tbody>

@@ -1,6 +1,7 @@
 <html>
 <head></head>
 <body>
+	<h1>All Production records</h1>
 <table>
 <thead>
 				<tr>
@@ -13,7 +14,7 @@
 					<td>Crumb Waste</td>
 					<td>Compactor Waste</td>
 					<td>Manning</td>
-					<td>Date</td>
+					
 				</tr>	
 			</thead>
 			<tbody>

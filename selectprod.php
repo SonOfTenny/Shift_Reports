@@ -32,17 +32,10 @@
 				// retrieve each row as an associative array
 				// and display the results
 				while ($row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
-					echo '<tr><td>'.$row['ID'].
-							'</td><td>'.$row['userID'].
-							'</td><td>'.$row['plantID'].
-							'</td><td>'.$row['shiftID'].
-							'</td><td>'.$row['prod_hours'].
-							'</td><td>'.$row['actual_mix'].
-							'</td><td>'.$row['crumb_waste'].
-							'</td><td>'.$row['cmp_waste'].
-							'</td><td>'.$row['manning'].
-							'</td><td>'.$row['date'].
-							'</td></tr>';
+					echo '<tr><td>'.$row['ID'].'</td>
+								<td>'.$row['userID'].'</td>
+								<td>'.$row['plantID'].
+								'</td><td>'.$row['shiftID'].'</td></tr>';
 				}
 				// free statement and connection resources
 				sqlsrv_free_stmt($stmt);

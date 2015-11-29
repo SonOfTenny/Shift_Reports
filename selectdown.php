@@ -33,12 +33,8 @@
 					echo '<tr><td>'.$row['ID'].'</td>
 								<td>'.$row['userID'].'</td>
 								<td>'.$row['plantID'].
-								'</td><td>'.$row['dtypeID'].'</td>
-										<td>'.$row['shiftID'].'</td>
-											<td>'.$row['down_hours'].'</td>
-												<td>'.$row['reason'].'</td>
-													<td>'.$row['action'].'</td>
-														<td>'.$row['date'].'</td></tr>';
+								'</td><td>'.$row['dtypeID'].'</td></tr>';
+								
 				}
 				// free statement and connection resources
 				sqlsrv_free_stmt($stmt);

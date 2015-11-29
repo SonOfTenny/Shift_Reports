@@ -35,7 +35,9 @@
 					echo '<tr><td>'.$row['ID'].'</td>
 								<td>'.$row['userID'].'</td>
 								<td>'.$row['plantID'].
-								'</td><td>'.$row['shiftID'].'</td></tr>';
+								'</td><td>'.$row['shiftID'].'</td><td>'.
+								$row['prod_hours'].'</td><td>'.
+								$row['actual_mix'].'</td></tr>';
 				}
 				// free statement and connection resources
 				sqlsrv_free_stmt($stmt);

@@ -39,9 +39,9 @@
 								$row['prod_hours'].'</td><td>'.
 								$row['actual_mix'].'</td><td>'.
 								$row['crumb_waste'].'</td><td>'.
-								$row['cmp_waste']
-
-
+								$row['cmp_waste'].'</td><td>'.
+								$row['manning'].'</td><td>'.
+								$row['date']
 								.'</td></tr>'
 								;
 				}
